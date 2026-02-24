@@ -1,0 +1,10 @@
+font-family = FiraCode Nerd Font
+window-padding-x = 10
+window-padding-y = 10
+
+background = #000000
+background-opacity = 0.5
+background-blur = 200
+resize-overlay-duration = 4s 200ms
+
+theme = "Matugen"

@@ -1,0 +1,38 @@
+[config]
+# ...
+[templates.hyprland]
+input_path = '~/.config/matugen/template/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+# ...
+
+# ...
+[templates.waybar]
+input_path = '/home/sav/.config/matugen/template/waybar-colors.conf'
+output_path = '/home/sav/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+# ...
+
+# [templates.gtk3]
+# input_path = 'path/to/template'
+# output_path = '~/.config/gtk-3.0/colors.css'
+# post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+# [templates.gtk4]
+# input_path = 'path/to/template'
+# output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.cava]
+input_path = '/home/sav/.config/matugen/template/cava-colors.ini'
+output_path = '/home/sav/.config/cava/themes/matugen'
+post_hook = 'pkill -USR1 cava'
+
+
+[templates.ghostty]
+input_path = '~/.config/matugen/template/ghotty-colors.conf'
+output_path = '~/.config/ghostty/themes/Matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
+
+
+[templates.zsh]
+input_path = '~/.config/matugen/template/zsh-highlights.zsh'
+output_path = '~/.config/zsh/highlights.zsh'

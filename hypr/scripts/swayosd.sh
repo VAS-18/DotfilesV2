@@ -1,0 +1,3 @@
+#!/bin/bash
+monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')
+swayosd-client --monitor "$monitor" "$@"

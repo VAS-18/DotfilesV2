@@ -1,0 +1,45 @@
+@import url("/home/sav/.config/waybar/colors.css");
+
+window#osd {
+  border-radius: 100px;
+  border: none;
+  background: alpha(@surface_container, 0.125);
+}
+  window#osd #container {
+    margin: 16px;
+  }
+  window#osd image,
+  window#osd label {
+    color: @on_surface;
+  }
+  window#osd progressbar:disabled,
+  window#osd image:disabled {
+    opacity: 0.5;
+  }
+  window#osd progressbar,
+  window#osd segmentedprogress {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+  }
+  window#osd trough,
+  window#osd segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(@on_surface, 0.2);
+  }
+  window#osd progress,
+  window#osd segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @primary;
+  }
+  window#osd segment {
+    margin-left: 8px;
+  }
+    window#osd segment:first-child {
+      margin-left: 0;
+    }

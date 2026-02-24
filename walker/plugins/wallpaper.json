@@ -1,0 +1,16 @@
+{
+  "name": "wallpaper",
+  "placeholder": "Pick a wallpaper...",
+  "commands": [
+    {
+      "cmd": "find ~/Wallpapers/aesthetic-wallpapers -type f \\( -name '*.jpg' -o -name '*.png' -o -name '*.webp' \\) | while read f; do echo \"{\\\"label\\\": \\\"$(basename $f)\\\", \\\"sub\\\": \\\"$f\\\", \\\"image\\\": \\\"$f\\\", \\\"value\\\": \\\"$f\\\"}\"; done",
+      "type": "json"
+    }
+  ],
+  "actions": [
+    {
+      "label": "Set wallpaper",
+      "cmd": "~/.local/bin/wallpaper.sh {value}"
+    }
+  ]
+}
