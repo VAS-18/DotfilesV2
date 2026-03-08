@@ -13,15 +13,13 @@
 
 window#waybar {
     background-color: alpha(@primary, 0.1);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #waybar > box {
     border-radius: 5px;
-    border: 1px solid alpha(@primary, 0.2);
-    margin: 0px 0px 0px 0px;
-    background-color: alpha(@surface, 0.555);
-    box-shadow: 0px 0px 6px @surface_container_lowest;
+    border: 1px solid alpha(@primary, 0.5);
+    background-color: alpha(@surface, 0.6);
     min-height: 20px;
     transition-property: background-color;
 }
@@ -99,8 +97,6 @@ button:hover {
 #bluetooth,
 #pulseaudio,
 #power-profiles-daemon,
-#custom-omarchy,
-#idle_inhibitor,
 #custom-updatespacman,
 #custom-screenrecording-indicator,
 #custom-update {
@@ -115,12 +111,6 @@ button:hover {
 }
 
 /* ── Individual modules ──────────────────────────────────── */
-
-#custom-omarchy {
-    font-size: 14px;
-    padding-left: 0px;
-    color: @primary;
-}
 
 #custom-expand-icon {
     margin-right: 0px;
@@ -278,17 +268,31 @@ tooltip label {
     }
 }
 
+/*@keyframes blink-cava {
+    to {
+        color: @surface_variant;
+    }
+}*/
+
 @keyframes blink-cava {
-  0%   { color: @source_color; }
-  33%  { color: @primary; }
-  66%  { color: @secondary; }
-  100% { color: @tertiary; }
+    0% {
+        color: @source_color;
+    }
+    33% {
+        color: @primary;
+    }
+    66% {
+        color: @secondary;
+    }
+    100% {
+        color: @tertiary;
+    }
 }
 
 #cava {
     color: @source_color;
     animation-name: blink-cava;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -297,10 +301,56 @@ tooltip label {
 #mpris {
     color: @primary;
     /*animation-name: blink-mpris;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;*/
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;*/
+}
+
+#custom-notification {
+    color: @primary;
+    font-size: 12px;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+#custom-mullvad {
+    font-size: 10px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 10px;
+    margin: 2px;
+    transition: all 0.3s ease;
+    min-width: 20px;
+}
+
+#custom-mullvad.connected {
+    color: @primary;
+    background: alpha(@primary_container, 0);
+}
+
+#custom-mullvad.disconnected {
+    color: @error;
+    background: alpha(@tertiary, 0);
+    animation: mullvad-spin 1s linear infinite;
+}
+
+#custom-mullvad.connecting {
+    color: @primary;
+    background: alpha(@primary_container, 0.3);
+    animation: mullvad-spin 1s linear infinite;
+}
+
+#custom-mullvad.disconnecting {
+    color: red;
+    background: alpha(@primary_container, 0);
+    animation: mullvad-spin 1s linear infinite;
+}
+
+/* Error */
+#custom-mullvad.error {
+    color: @error;
+    background: transparent;
 }
 
 /* ── Hidden utility class ────────────────────────────────── */

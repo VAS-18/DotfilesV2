@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <object class="GtkBox" id="item">
+    <property name="orientation">horizontal</property>
+    <property name="spacing">10</property>
+    <child>
+      <object class="GtkImage" id="icon">
+        <property name="pixel-size">24</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="valign">center</property>
+        <child>
+          <object class="GtkLabel" id="label">
+            <property name="halign">start</property>
+            <property name="ellipsize">end</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="sub">
+            <property name="halign">start</property>
+            <property name="ellipsize">end</property>
+            <style><class name="item-sub" /></style>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

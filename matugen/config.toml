@@ -36,3 +36,21 @@ post_hook = 'pkill -SIGUSR2 ghostty'
 [templates.zsh]
 input_path = '~/.config/matugen/template/zsh-highlights.zsh'
 output_path = '~/.config/zsh/highlights.zsh'
+
+
+[templates.spotify]
+input_path = '~/.config/matugen/template/spicetify.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+# post_hook = 'spicetify watch -s 2>&1 | sed "/Reloaded Spotify/q"'
+
+[templates.zed]
+input_path = '~/.config/matugen/template/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'
+
+
+
+
+# [templates.swaync]
+# input_path = "./colors.css"
+# output_path = "~/.config/swaync/colors.css"
+# post_hook = "swaync-client -rs"
